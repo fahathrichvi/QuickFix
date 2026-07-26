@@ -12,10 +12,18 @@ const supabaseAdmin = createClient(supabaseUrl, serviceRoleKey, {
 });
 
 async function testAdminCreate() {
+  // Credentials are arguments — this file is committed to a public repo.
+  const [email, password] = process.argv.slice(2);
+
+  if (!email || !password) {
+    console.error('Usage: node scripts/test-admin-create.js <email> <password>');
+    process.exit(1);
+  }
+
   console.log('Testing admin createUser...');
   const { data, error } = await supabaseAdmin.auth.admin.createUser({
-    email: 'vikki@quickfix.com',
-    password: 'Password123!',
+    email,
+    password,
     email_confirm: true,
     user_metadata: {
       full_name: 'Vikki',

@@ -7,10 +7,18 @@ const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, anonKey);
 
 async function testSignUp() {
+  // Credentials are arguments — this file is committed to a public repo.
+  const [email, password] = process.argv.slice(2);
+
+  if (!email || !password) {
+    console.error('Usage: node scripts/test-signup.js <email> <password>');
+    process.exit(1);
+  }
+
   console.log('Testing client signUp...');
   const { data, error } = await supabase.auth.signUp({
-    email: 'vikki@quickfix.com',
-    password: 'Password123!',
+    email,
+    password,
     options: {
       data: {
         full_name: 'Vikki',

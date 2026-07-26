@@ -12,8 +12,14 @@ const supabaseAdmin = createClient(supabaseUrl, serviceRoleKey, {
 });
 
 async function setupAdminAccount() {
-  const adminEmail = 'admin@quickfix.com';
-  const adminPassword = 'Password123!';
+  // Passed in, never hardcoded — this file is committed to a public repo.
+  const [adminEmail, adminPassword] = process.argv.slice(2);
+
+  if (!adminEmail || !adminPassword) {
+    console.error('Usage: node scripts/set-admin.js <email> <password>');
+    console.error('Prefer scripts/set-admin-account.js, which also verifies the result.');
+    process.exit(1);
+  }
 
   console.log(`Setting up admin user: ${adminEmail}`);
 
