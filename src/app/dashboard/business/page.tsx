@@ -246,85 +246,85 @@ export default function BusinessOwnerDashboard() {
   const pendingCount = bookings.filter((b) => b.status === 'pending').length;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
       <Navbar />
 
       <main className="flex-1 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-6 mb-8 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-6 mb-8 gap-4">
           <div>
             <div className="flex items-center space-x-2">
-              <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Business Owner Portal</span>
+              <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Business Owner Portal</span>
               {business?.verification_status === 'approved' && (
-                <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/30">
+                <span className="bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/30">
                   Verified
                 </span>
               )}
             </div>
-            <h1 className="text-3xl font-extrabold text-white mt-1">
+            <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
               {business?.name || 'My Business Desk'}
             </h1>
           </div>
 
           <button
             onClick={loadData}
-            className="self-start sm:self-auto bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-xs font-medium px-4 py-2 rounded-xl transition flex items-center space-x-2"
+            className="self-start sm:self-auto bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium px-4 py-2 rounded-xl transition flex items-center space-x-2"
           >
-            <RefreshCw className="h-4 w-4 text-blue-400" />
+            <RefreshCw className="h-4 w-4 text-blue-600 dark:text-blue-400" />
             <span>Refresh Dashboard</span>
           </button>
         </div>
 
         {/* Analytics Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-slate-400">Total Revenue</span>
-              <DollarSign className="h-4 w-4 text-emerald-400" />
+              <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Total Revenue</span>
+              <DollarSign className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
             </div>
-            <div className="text-2xl font-extrabold text-white mt-2">
+            <div className="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">
               {formatCurrency(totalRevenue)}
             </div>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-slate-400">Total Bookings</span>
-              <Calendar className="h-4 w-4 text-blue-400" />
+              <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Total Bookings</span>
+              <Calendar className="h-4 w-4 text-blue-600 dark:text-blue-400" />
             </div>
-            <div className="text-2xl font-extrabold text-white mt-2">
+            <div className="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">
               {bookings.length}
             </div>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-slate-400">Completed Orders</span>
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Completed Orders</span>
+              <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
             </div>
-            <div className="text-2xl font-extrabold text-white mt-2">
+            <div className="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">
               {completedCount}
             </div>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-slate-400">Rating</span>
-              <Star className="h-4 w-4 text-amber-400" />
+              <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Rating</span>
+              <Star className="h-4 w-4 text-amber-600 dark:text-amber-400" />
             </div>
-            <div className="text-2xl font-extrabold text-white mt-2">
+            <div className="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">
               {business?.average_rating ? Number(business.average_rating).toFixed(2) : '0.00'} ★
             </div>
           </div>
         </div>
 
         {/* Dashboard Tabs */}
-        <div className="flex items-center space-x-4 border-b border-slate-800 mb-8">
+        <div className="flex items-center space-x-4 border-b border-slate-200 dark:border-slate-800 mb-8">
           <button
             onClick={() => setActiveTab('bookings')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 ${
               activeTab === 'bookings'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Calendar className="h-4 w-4" />
@@ -335,8 +335,8 @@ export default function BusinessOwnerDashboard() {
             onClick={() => setActiveTab('services')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 ${
               activeTab === 'services'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Building2 className="h-4 w-4" />
@@ -347,8 +347,8 @@ export default function BusinessOwnerDashboard() {
             onClick={() => setActiveTab('verification')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 ${
               activeTab === 'verification'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <ShieldCheck className="h-4 w-4" />
@@ -360,47 +360,47 @@ export default function BusinessOwnerDashboard() {
         {activeTab === 'bookings' && (
           <div className="space-y-4">
             {bookings.length === 0 ? (
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center text-slate-400">
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-12 text-center text-slate-600 dark:text-slate-400">
                 No customer bookings received yet.
               </div>
             ) : (
               bookings.map((booking) => (
                 <div
                   key={booking.id}
-                  className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+                  className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center space-x-3">
-                      <span className="text-base font-bold text-white">{booking.services?.name}</span>
+                      <span className="text-base font-bold text-slate-900 dark:text-white">{booking.services?.name}</span>
                       <span
                         className={`text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full border ${
                           booking.status === 'completed'
-                            ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                            ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
                             : booking.status === 'accepted' || booking.status === 'confirmed'
-                            ? 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                            ? 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border-blue-500/30'
                             : booking.status === 'cancelled' || booking.status === 'rejected'
-                            ? 'bg-rose-500/20 text-rose-400 border-rose-500/30'
-                            : 'bg-amber-500/20 text-amber-400 border-amber-500/30'
+                            ? 'bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/30'
+                            : 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30'
                         }`}
                       >
                         {booking.status}
                       </span>
                     </div>
 
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-slate-600 dark:text-slate-400">
                       Customer:{' '}
-                      <span className="text-white font-medium">
+                      <span className="text-slate-900 dark:text-white font-medium">
                         {booking.profiles?.full_name} ({booking.profiles?.phone || 'No phone'})
                       </span>
                     </p>
 
-                    <div className="flex items-center space-x-4 text-xs text-slate-400">
+                    <div className="flex items-center space-x-4 text-xs text-slate-600 dark:text-slate-400">
                       <span className="flex items-center space-x-1">
-                        <Calendar className="h-3.5 w-3.5 text-blue-400" />
+                        <Calendar className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
                         <span>Date: {booking.booking_date}</span>
                       </span>
                       <span className="flex items-center space-x-1">
-                        <Clock className="h-3.5 w-3.5 text-indigo-400" />
+                        <Clock className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
                         <span>
                           Time: {booking.start_time.substring(0, 5)} - {booking.end_time.substring(0, 5)}
                         </span>
@@ -408,14 +408,14 @@ export default function BusinessOwnerDashboard() {
                     </div>
 
                     {booking.notes && (
-                      <p className="text-xs text-slate-300 italic bg-slate-950 p-2.5 rounded-xl border border-slate-800 max-w-lg mt-1">
+                      <p className="text-xs text-slate-700 dark:text-slate-300 italic bg-slate-50 dark:bg-slate-950 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 max-w-lg mt-1">
                         Notes / Reason: "{booking.notes}"
                       </p>
                     )}
                   </div>
 
-                  <div className="w-full md:w-auto flex md:flex-col items-center md:items-end justify-between border-t md:border-t-0 pt-3 md:pt-0 border-slate-800 gap-3">
-                    <span className="text-lg font-bold text-blue-400">
+                  <div className="w-full md:w-auto flex md:flex-col items-center md:items-end justify-between border-t md:border-t-0 pt-3 md:pt-0 border-slate-200 dark:border-slate-800 gap-3">
+                    <span className="text-lg font-bold text-blue-600 dark:text-blue-400">
                       {formatCurrency(booking.total_price)}
                     </span>
 
@@ -431,7 +431,7 @@ export default function BusinessOwnerDashboard() {
                           </button>
                           <button
                             onClick={() => setRejectBookingId(booking.id)}
-                            className="bg-rose-600/20 text-rose-400 hover:bg-rose-600/30 border border-rose-500/30 text-xs font-semibold px-3 py-2 rounded-xl transition flex items-center space-x-1"
+                            className="bg-rose-600/20 text-rose-600 dark:text-rose-400 hover:bg-rose-600/30 border border-rose-500/30 text-xs font-semibold px-3 py-2 rounded-xl transition flex items-center space-x-1"
                           >
                             <XCircle className="h-3.5 w-3.5" />
                             <span>Decline with Reason</span>
@@ -449,7 +449,7 @@ export default function BusinessOwnerDashboard() {
                           </button>
                           <button
                             onClick={() => setRejectBookingId(booking.id)}
-                            className="bg-rose-600/20 text-rose-400 hover:bg-rose-600/30 border border-rose-500/30 text-xs font-semibold px-3 py-2 rounded-xl transition"
+                            className="bg-rose-600/20 text-rose-600 dark:text-rose-400 hover:bg-rose-600/30 border border-rose-500/30 text-xs font-semibold px-3 py-2 rounded-xl transition"
                           >
                             Cancel
                           </button>
@@ -467,7 +467,7 @@ export default function BusinessOwnerDashboard() {
         {activeTab === 'services' && (
           <div className="space-y-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-bold text-white">Active Business Services</h2>
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">Active Business Services</h2>
               <button
                 onClick={() => setIsAddServiceOpen(true)}
                 className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center space-x-1.5"
@@ -479,12 +479,12 @@ export default function BusinessOwnerDashboard() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {services.map((srv) => (
-                <div key={srv.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-2">
+                <div key={srv.id} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-base font-bold text-white">{srv.name}</h3>
-                    <span className="text-base font-extrabold text-blue-400">{formatCurrency(srv.price)}</span>
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white">{srv.name}</h3>
+                    <span className="text-base font-extrabold text-blue-600 dark:text-blue-400">{formatCurrency(srv.price)}</span>
                   </div>
-                  <p className="text-xs text-slate-400">{srv.description}</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">{srv.description}</p>
                   <span className="text-xs text-slate-500 block">Duration: {srv.duration_minutes} mins</span>
                 </div>
               ))}
@@ -493,51 +493,51 @@ export default function BusinessOwnerDashboard() {
             {/* Add Service Modal */}
             {isAddServiceOpen && (
               <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-                <form onSubmit={handleAddService} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
-                  <h3 className="text-lg font-bold text-white">Add New Service</h3>
+                <form onSubmit={handleAddService} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">Add New Service</h3>
 
                   <div>
-                    <label className="block text-xs text-slate-300 mb-1">Service Name</label>
+                    <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Service Name</label>
                     <input
                       type="text"
                       value={newServiceName}
                       onChange={(e) => setNewServiceName(e.target.value)}
                       placeholder="e.g. Drain Cleaning"
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs text-slate-300 mb-1">Description</label>
+                    <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Description</label>
                     <textarea
                       rows={2}
                       value={newServiceDesc}
                       onChange={(e) => setNewServiceDesc(e.target.value)}
                       placeholder="Brief details of what is included..."
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                     />
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs text-slate-300 mb-1">Price ($)</label>
+                      <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Price ($)</label>
                       <input
                         type="number"
                         step="0.01"
                         value={newServicePrice}
                         onChange={(e) => setNewServicePrice(e.target.value)}
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                        className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-slate-300 mb-1">Duration (Mins)</label>
+                      <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Duration (Mins)</label>
                       <input
                         type="number"
                         value={newServiceDuration}
                         onChange={(e) => setNewServiceDuration(e.target.value)}
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                        className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                         required
                       />
                     </div>
@@ -547,7 +547,7 @@ export default function BusinessOwnerDashboard() {
                     <button
                       type="button"
                       onClick={() => setIsAddServiceOpen(false)}
-                      className="px-4 py-2 text-xs text-slate-400 hover:text-white"
+                      className="px-4 py-2 text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                     >
                       Cancel
                     </button>
@@ -566,29 +566,29 @@ export default function BusinessOwnerDashboard() {
 
         {/* Tab 3: Verification Upload */}
         {activeTab === 'verification' && (
-          <div className="max-w-2xl bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6">
+          <div className="max-w-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-6">
             <div>
-              <h2 className="text-lg font-bold text-white flex items-center space-x-2">
-                <ShieldCheck className="h-5 w-5 text-emerald-400" />
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                <ShieldCheck className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                 <span>Verification & License Status</span>
               </h2>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
                 Verified businesses receive higher search rankings and a verified badge visible to customers.
               </p>
             </div>
 
             {verification ? (
-              <div className="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
+              <div className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-4 rounded-xl space-y-2">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Current Status:</span>
-                  <span className="font-bold uppercase text-amber-400">{verification.status}</span>
+                  <span className="text-slate-600 dark:text-slate-400">Current Status:</span>
+                  <span className="font-bold uppercase text-amber-600 dark:text-amber-400">{verification.status}</span>
                 </div>
-                <p className="text-xs text-slate-400">Document URL: {verification.document_url}</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400">Document URL: {verification.document_url}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmitVerification} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                     Business License / Document Storage Link
                   </label>
                   <input
@@ -596,7 +596,7 @@ export default function BusinessOwnerDashboard() {
                     value={docUrl}
                     onChange={(e) => setDocUrl(e.target.value)}
                     placeholder="https://storage.example.com/verification-doc.pdf"
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                     required
                   />
                 </div>
@@ -615,23 +615,23 @@ export default function BusinessOwnerDashboard() {
         {/* Business Partner Decline / Cancellation Reason Modal */}
         {rejectBookingId && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-            <form onSubmit={handleRejectBookingSubmit} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
-              <h3 className="text-lg font-bold text-white flex items-center space-x-2">
-                <AlertCircle className="h-5 w-5 text-rose-400" />
+            <form onSubmit={handleRejectBookingSubmit} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                <AlertCircle className="h-5 w-5 text-rose-600 dark:text-rose-400" />
                 <span>Decline Booking Request</span>
               </h3>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-slate-700 dark:text-slate-300">
                 Please enter the reason why your business cannot fulfill this appointment (this reason will be sent to the customer).
               </p>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">Reason for Decline / Cancellation</label>
+                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Reason for Decline / Cancellation</label>
                 <textarea
                   rows={3}
                   value={rejectReason}
                   onChange={(e) => setRejectReason(e.target.value)}
                   placeholder="e.g. Overbooked during this time slot, out of service radius, technician unavailable..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-rose-500"
                   required
                 />
               </div>
@@ -640,7 +640,7 @@ export default function BusinessOwnerDashboard() {
                 <button
                   type="button"
                   onClick={() => setRejectBookingId(null)}
-                  className="px-4 py-2 text-xs text-slate-400 hover:text-white"
+                  className="px-4 py-2 text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 >
                   Back
                 </button>

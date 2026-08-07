@@ -92,15 +92,15 @@ function LoginForm() {
   };
 
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 max-w-md w-full shadow-2xl space-y-6">
+    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 max-w-md w-full shadow-2xl space-y-6">
       <div className="text-center">
         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white mx-auto mb-3 shadow-lg shadow-blue-500/30">
           <Wrench className="h-6 w-6" />
         </div>
-        <h1 className="text-2xl font-bold text-white">
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
           {isForgotPassword ? 'Reset Your Password' : 'Log in to Quickfix'}
         </h1>
-        <p className="text-xs text-slate-400 mt-1">
+        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
           {isForgotPassword
             ? 'Enter your account email to receive a password reset link.'
             : 'Welcome back! Access your bookings and dashboard.'}
@@ -108,14 +108,14 @@ function LoginForm() {
       </div>
 
       {errorMsg && (
-        <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-xs text-rose-400 flex items-center space-x-2">
+        <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-xs text-rose-600 dark:text-rose-400 flex items-center space-x-2">
           <AlertCircle className="h-4 w-4 shrink-0" />
           <span>{errorMsg}</span>
         </div>
       )}
 
       {successMsg && (
-        <div className="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-xs text-emerald-400 flex items-center space-x-2">
+        <div className="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-xs text-emerald-600 dark:text-emerald-400 flex items-center space-x-2">
           <CheckCircle2 className="h-4 w-4 shrink-0" />
           <span>{successMsg}</span>
         </div>
@@ -124,7 +124,7 @@ function LoginForm() {
       {!isForgotPassword ? (
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
             <div className="relative">
               <Mail className="absolute left-3 top-3 h-4 w-4 text-slate-500" />
               <input
@@ -132,7 +132,7 @@ function LoginForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@example.com"
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl pl-9 pr-3 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500"
                 required
               />
             </div>
@@ -140,7 +140,7 @@ function LoginForm() {
 
           <div>
             <div className="flex items-center justify-between mb-1">
-              <label className="block text-xs font-semibold text-slate-300">Password</label>
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">Password</label>
               <button
                 type="button"
                 onClick={() => {
@@ -148,7 +148,7 @@ function LoginForm() {
                   setErrorMsg(null);
                   setSuccessMsg(null);
                 }}
-                className="text-xs text-blue-400 hover:underline font-medium"
+                className="text-xs text-blue-600 dark:text-blue-400 hover:underline font-medium"
               >
                 Forgot password?
               </button>
@@ -160,7 +160,7 @@ function LoginForm() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl pl-9 pr-3 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500"
                 required
               />
             </div>
@@ -178,7 +178,7 @@ function LoginForm() {
       ) : (
         <form onSubmit={handleForgotPassword} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">Account Email Address</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Account Email Address</label>
             <div className="relative">
               <Mail className="absolute left-3 top-3 h-4 w-4 text-slate-500" />
               <input
@@ -186,7 +186,7 @@ function LoginForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@example.com"
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl pl-9 pr-3 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500"
                 required
               />
             </div>
@@ -208,7 +208,7 @@ function LoginForm() {
               setErrorMsg(null);
               setSuccessMsg(null);
             }}
-            className="w-full text-xs text-slate-400 hover:text-white font-medium flex items-center justify-center space-x-1 pt-2"
+            className="w-full text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium flex items-center justify-center space-x-1 pt-2"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>Back to Login</span>
@@ -217,23 +217,23 @@ function LoginForm() {
       )}
 
       {!isForgotPassword && (
-        <div className="relative border-t border-slate-800 pt-4 text-center">
-          <span className="bg-slate-900 px-3 text-[10px] uppercase font-bold text-slate-500 -top-2.5 relative">
+        <div className="relative border-t border-slate-200 dark:border-slate-800 pt-4 text-center">
+          <span className="bg-white dark:bg-slate-900 px-3 text-[10px] uppercase font-bold text-slate-500 -top-2.5 relative">
             Or continue with
           </span>
 
           <button
             onClick={handleGoogleLogin}
-            className="w-full mt-3 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center space-x-2"
+            className="w-full mt-3 bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-xs py-2.5 rounded-xl transition flex items-center justify-center space-x-2"
           >
             <span>Google OAuth</span>
           </button>
         </div>
       )}
 
-      <p className="text-center text-xs text-slate-400">
+      <p className="text-center text-xs text-slate-600 dark:text-slate-400">
         Don't have an account?{' '}
-        <Link href="/auth/register" className="text-blue-400 font-semibold hover:underline">
+        <Link href="/auth/register" className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
           Create account
         </Link>
       </p>
@@ -243,10 +243,10 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
       <Navbar />
       <main className="flex-1 flex items-center justify-center p-4">
-        <Suspense fallback={<div className="text-slate-400 text-xs">Loading form...</div>}>
+        <Suspense fallback={<div className="text-slate-600 dark:text-slate-400 text-xs">Loading form...</div>}>
           <LoginForm />
         </Suspense>
       </main>

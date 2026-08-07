@@ -112,26 +112,26 @@ export function BookingModal({ business, service }: BookingModalProps) {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative space-y-5 animate-in fade-in zoom-in duration-200">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative space-y-5 animate-in fade-in zoom-in duration-200">
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white"
+              className="absolute top-4 right-4 p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
             >
               <X className="h-5 w-5" />
             </button>
 
             {successBooking ? (
               <div className="text-center py-6 space-y-4">
-                <div className="h-14 w-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
+                <div className="h-14 w-14 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Booking Confirmed!</h3>
-                <p className="text-xs text-slate-300">
-                  Your appointment for <span className="text-blue-400 font-semibold">{service.name}</span> on{' '}
-                  <span className="text-white font-semibold">{bookingDate}</span> at{' '}
-                  <span className="text-white font-semibold">{startTime.substring(0, 5)}</span> has been securely created.
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Booking Confirmed!</h3>
+                <p className="text-xs text-slate-700 dark:text-slate-300">
+                  Your appointment for <span className="text-blue-600 dark:text-blue-400 font-semibold">{service.name}</span> on{' '}
+                  <span className="text-slate-900 dark:text-white font-semibold">{bookingDate}</span> at{' '}
+                  <span className="text-slate-900 dark:text-white font-semibold">{startTime.substring(0, 5)}</span> has been securely created.
                 </p>
-                <div className="bg-slate-950 border border-slate-800 p-3 rounded-xl text-xs text-slate-400 font-mono">
+                <div className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-3 rounded-xl text-xs text-slate-600 dark:text-slate-400 font-mono">
                   Ref ID: {successBooking.id}
                 </div>
                 <div className="pt-4 flex items-center justify-center space-x-3">
@@ -146,18 +146,18 @@ export function BookingModal({ business, service }: BookingModalProps) {
             ) : (
               <form onSubmit={handleCreateBooking} className="space-y-4">
                 <div>
-                  <div className="flex items-center space-x-2 text-xs font-semibold text-blue-400 uppercase tracking-wider mb-1">
+                  <div className="flex items-center space-x-2 text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-1">
                     <ShieldCheck className="h-4 w-4" />
                     <span>Atomic Transaction Protected</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">Schedule Appointment</h3>
-                  <p className="text-xs text-slate-400 mt-1">
-                    {service.name} — <span className="text-white font-bold">{formatCurrency(service.price)}</span>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Schedule Appointment</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                    {service.name} — <span className="text-slate-900 dark:text-white font-bold">{formatCurrency(service.price)}</span>
                   </p>
                 </div>
 
                 {errorMsg && (
-                  <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-xs text-rose-400 flex items-center space-x-2">
+                  <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-xl text-xs text-rose-600 dark:text-rose-400 flex items-center space-x-2">
                     <AlertCircle className="h-4 w-4 shrink-0" />
                     <span>{errorMsg}</span>
                   </div>
@@ -165,20 +165,20 @@ export function BookingModal({ business, service }: BookingModalProps) {
 
                 {/* Date Picker */}
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">Select Date</label>
+                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">Select Date</label>
                   <input
                     type="date"
                     value={bookingDate}
                     min={new Date().toISOString().split('T')[0]}
                     onChange={(e) => setBookingDate(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                     required
                   />
                 </div>
 
                 {/* Time Slot Picker */}
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-2">Select Start Time</label>
+                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-2">Select Start Time</label>
                   <div className="grid grid-cols-4 gap-2">
                     {availableTimeSlots.map((slot) => (
                       <button
@@ -188,7 +188,7 @@ export function BookingModal({ business, service }: BookingModalProps) {
                         className={`py-2 text-xs font-semibold rounded-xl border transition ${
                           startTime === slot
                             ? 'bg-blue-600 border-blue-500 text-white'
-                            : 'bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-700'
+                            : 'bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700'
                         }`}
                       >
                         {slot.substring(0, 5)}
@@ -199,7 +199,7 @@ export function BookingModal({ business, service }: BookingModalProps) {
 
                 {/* Customer Notes */}
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                  <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1">
                     Notes for Service Provider (Optional)
                   </label>
                   <textarea
@@ -207,7 +207,7 @@ export function BookingModal({ business, service }: BookingModalProps) {
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="Describe specific issues, gate codes, or instructions..."
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500"
                   />
                 </div>
 
@@ -215,7 +215,7 @@ export function BookingModal({ business, service }: BookingModalProps) {
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="px-4 py-2.5 text-xs font-medium text-slate-400 hover:text-white"
+                    className="px-4 py-2.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                   >
                     Cancel
                   </button>

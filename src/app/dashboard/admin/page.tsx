@@ -500,36 +500,36 @@ export default function AdminDashboard() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
       <Navbar />
 
       <main className="flex-1 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-6 mb-8">
+        <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-6 mb-8">
           <div>
             <div className="flex items-center space-x-2">
-              <ShieldCheck className="h-5 w-5 text-blue-400" />
-              <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider">Superadmin Control Desk</span>
+              <ShieldCheck className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">Superadmin Control Desk</span>
             </div>
-            <h1 className="text-3xl font-extrabold text-white mt-1">Platform Administration & User Management</h1>
+            <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Platform Administration & User Management</h1>
           </div>
 
           <button
             onClick={loadData}
-            className="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-xs font-medium px-4 py-2 rounded-xl transition flex items-center space-x-2"
+            className="bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium px-4 py-2 rounded-xl transition flex items-center space-x-2"
           >
-            <RefreshCw className="h-4 w-4 text-blue-400" />
+            <RefreshCw className="h-4 w-4 text-blue-600 dark:text-blue-400" />
             <span>Reload Admin Data</span>
           </button>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex items-center space-x-4 border-b border-slate-800 mb-8 overflow-x-auto">
+        <div className="flex items-center space-x-4 border-b border-slate-200 dark:border-slate-800 mb-8 overflow-x-auto">
           <button
             onClick={() => setActiveTab('bookings')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'bookings'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Calendar className="h-4 w-4" />
@@ -540,8 +540,8 @@ export default function AdminDashboard() {
             onClick={() => setActiveTab('providers')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'providers'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Building2 className="h-4 w-4" />
@@ -552,8 +552,8 @@ export default function AdminDashboard() {
             onClick={() => setActiveTab('customers')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'customers'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Users className="h-4 w-4" />
@@ -564,8 +564,8 @@ export default function AdminDashboard() {
             onClick={() => setActiveTab('financial')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'financial'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <PieChart className="h-4 w-4" />
@@ -576,8 +576,8 @@ export default function AdminDashboard() {
             onClick={() => setActiveTab('verifications')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'verifications'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <ShieldCheck className="h-4 w-4" />
@@ -588,8 +588,8 @@ export default function AdminDashboard() {
             onClick={() => setActiveTab('categories')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'categories'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <Tag className="h-4 w-4" />
@@ -600,8 +600,8 @@ export default function AdminDashboard() {
             onClick={() => setActiveTab('cities')}
             className={`pb-3 text-sm font-bold border-b-2 transition flex items-center space-x-2 shrink-0 ${
               activeTab === 'cities'
-                ? 'border-blue-500 text-blue-400'
-                : 'border-transparent text-slate-400 hover:text-white'
+                ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <MapPin className="h-4 w-4" />
@@ -612,37 +612,37 @@ export default function AdminDashboard() {
         {/* Tab 3: Bookings Moderation */}
         {activeTab === 'bookings' && (
           <div className="space-y-4">
-            <h2 className="text-lg font-bold text-white mb-2">All Platform Bookings</h2>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">All Platform Bookings</h2>
             {allBookings.length === 0 ? (
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center text-xs text-slate-400">
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 text-center text-xs text-slate-600 dark:text-slate-400">
                 No bookings recorded yet.
               </div>
             ) : (
               allBookings.map((b) => (
-                <div key={b.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div key={b.id} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                   <div className="space-y-1.5">
                     <div className="flex items-center space-x-3">
-                      <span className="text-base font-bold text-white">{b.services?.name}</span>
+                      <span className="text-base font-bold text-slate-900 dark:text-white">{b.services?.name}</span>
                       <span className={`text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full border ${
                         b.status === 'completed'
-                          ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                          ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
                           : b.status === 'cancelled' || b.status === 'rejected'
-                          ? 'bg-rose-500/20 text-rose-400 border-rose-500/30'
-                          : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                          ? 'bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/30'
+                          : 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border-blue-500/30'
                       }`}>
                         {b.status}
                       </span>
                     </div>
 
-                    <p className="text-xs text-slate-300">
-                      Customer: <span className="text-white font-medium">{b.profiles?.full_name} ({b.profiles?.email || 'No Email'})</span> | Provider: <span className="text-white font-medium">{b.businesses?.name} ({b.businesses?.email || 'No Email'})</span>
+                    <p className="text-xs text-slate-700 dark:text-slate-300">
+                      Customer: <span className="text-slate-900 dark:text-white font-medium">{b.profiles?.full_name} ({b.profiles?.email || 'No Email'})</span> | Provider: <span className="text-slate-900 dark:text-white font-medium">{b.businesses?.name} ({b.businesses?.email || 'No Email'})</span>
                     </p>
 
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-slate-600 dark:text-slate-400">
                       Date: {b.booking_date} | Time: {b.start_time?.substring(0, 5)} - {b.end_time?.substring(0, 5)} | Price: {formatCurrency(b.total_price, currencySymbol, currencyCode)}
                     </p>
 
-                    {b.notes && <p className="text-xs text-slate-400 italic bg-slate-950 p-2 rounded-lg max-w-lg">"{b.notes}"</p>}
+                    {b.notes && <p className="text-xs text-slate-600 dark:text-slate-400 italic bg-slate-50 dark:bg-slate-950 p-2 rounded-lg max-w-lg">"{b.notes}"</p>}
                   </div>
 
                   {b.status !== 'cancelled' && b.status !== 'completed' && (
@@ -668,8 +668,8 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h2 className="text-xl font-extrabold text-white">Service Providers & Business Partners CRUD</h2>
-                <p className="text-xs text-slate-400 mt-1">Manage business listings, verification badges, subscription tiers, and reset provider login credentials.</p>
+                <h2 className="text-xl font-extrabold text-slate-900 dark:text-white">Service Providers & Business Partners CRUD</h2>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Manage business listings, verification badges, subscription tiers, and reset provider login credentials.</p>
               </div>
 
               <div className="relative w-full sm:w-64">
@@ -679,16 +679,16 @@ export default function AdminDashboard() {
                   value={providerSearch}
                   onChange={(e) => setProviderSearch(e.target.value)}
                   placeholder="Search by name or email..."
-                  className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                  className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500"
                 />
               </div>
             </div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
-                    <tr className="bg-slate-950 text-slate-400 font-semibold uppercase tracking-wider border-b border-slate-800">
+                    <tr className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 font-semibold uppercase tracking-wider border-b border-slate-200 dark:border-slate-800">
                       <th className="p-4">Business & Owner</th>
                       <th className="p-4">Email Address</th>
                       <th className="p-4">Category & City</th>
@@ -698,7 +698,7 @@ export default function AdminDashboard() {
                       <th className="p-4 text-right">Actions / Password Reset</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/80">
+                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800/80">
                     {filteredProviders.length === 0 ? (
                       <tr>
                         <td colSpan={7} className="p-8 text-center text-slate-500">
@@ -712,27 +712,27 @@ export default function AdminDashboard() {
                         const emailDisplay = prov.email || ownerProf?.email || 'No email registered';
 
                         return (
-                          <tr key={prov.id} className="hover:bg-slate-800/40 transition">
+                          <tr key={prov.id} className="hover:bg-slate-100 dark:hover:bg-slate-800/40 transition">
                             <td className="p-4">
-                              <div className="font-bold text-white text-sm">{prov.name}</div>
-                              <div className="text-[11px] text-slate-400 mt-0.5">
-                                Owner: <span className="text-slate-200 font-medium">{ownerProf?.full_name || 'N/A'}</span> ({ownerProf?.phone || prov.phone || 'No Phone'})
+                              <div className="font-bold text-slate-900 dark:text-white text-sm">{prov.name}</div>
+                              <div className="text-[11px] text-slate-600 dark:text-slate-400 mt-0.5">
+                                Owner: <span className="text-slate-800 dark:text-slate-200 font-medium">{ownerProf?.full_name || 'N/A'}</span> ({ownerProf?.phone || prov.phone || 'No Phone'})
                               </div>
                             </td>
 
                             <td className="p-4">
-                              <div className="font-semibold text-blue-400 flex items-center space-x-1.5">
+                              <div className="font-semibold text-blue-600 dark:text-blue-400 flex items-center space-x-1.5">
                                 <Mail className="h-3.5 w-3.5 shrink-0" />
                                 <span>{emailDisplay}</span>
                               </div>
                             </td>
 
                             <td className="p-4">
-                              <div className="font-medium text-slate-200">{catObj?.name || 'General Services'}</div>
+                              <div className="font-medium text-slate-800 dark:text-slate-200">{catObj?.name || 'General Services'}</div>
                               <div className="text-[11px] text-slate-500">City: {prov.city}</div>
                             </td>
 
-                            <td className="p-4 font-bold text-amber-400">
+                            <td className="p-4 font-bold text-amber-600 dark:text-amber-400">
                               {Number(prov.average_rating || 0).toFixed(2)} ★ ({prov.review_count || 0})
                             </td>
 
@@ -740,10 +740,10 @@ export default function AdminDashboard() {
                               <span
                                 className={`text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full border ${
                                   prov.verification_status === 'approved'
-                                    ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                                    ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
                                     : prov.verification_status === 'rejected'
-                                    ? 'bg-rose-500/20 text-rose-400 border-rose-500/30'
-                                    : 'bg-amber-500/20 text-amber-400 border-amber-500/30'
+                                    ? 'bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/30'
+                                    : 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30'
                                 }`}
                               >
                                 {prov.verification_status}
@@ -751,7 +751,7 @@ export default function AdminDashboard() {
                             </td>
 
                             <td className="p-4">
-                              <span className="text-[10px] font-bold uppercase px-2 py-0.5 bg-slate-800 text-slate-300 rounded-md">
+                              <span className="text-[10px] font-bold uppercase px-2 py-0.5 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md">
                                 {prov.subscription_status}
                               </span>
                             </td>
@@ -760,7 +760,7 @@ export default function AdminDashboard() {
                               <div className="flex items-center justify-end space-x-2">
                                 <button
                                   onClick={() => setResetTargetUser({ id: prov.owner_id, name: prov.name, email: emailDisplay })}
-                                  className="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 px-3 py-1.5 rounded-xl transition text-[11px] font-bold flex items-center space-x-1"
+                                  className="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-xl transition text-[11px] font-bold flex items-center space-x-1"
                                   title="Reset Owner Password"
                                 >
                                   <Key className="h-3.5 w-3.5" />
@@ -769,7 +769,7 @@ export default function AdminDashboard() {
 
                                 <button
                                   onClick={() => setEditingProvider(prov)}
-                                  className="p-1.5 text-slate-400 hover:text-blue-400 transition"
+                                  className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
                                   title="Edit Business Provider"
                                 >
                                   <Edit3 className="h-4 w-4" />
@@ -777,7 +777,7 @@ export default function AdminDashboard() {
 
                                 <button
                                   onClick={() => handleDeleteProvider(prov.id, prov.name, prov.owner_id)}
-                                  className="p-1.5 text-slate-400 hover:text-rose-400 transition"
+                                  className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 transition"
                                   title="Delete Provider"
                                 >
                                   <Trash2 className="h-4 w-4" />
@@ -800,8 +800,8 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h2 className="text-xl font-extrabold text-white">Customer Account Management</h2>
-                <p className="text-xs text-slate-400 mt-1">View, edit, deactivate, or reset login passwords for all registered marketplace customers.</p>
+                <h2 className="text-xl font-extrabold text-slate-900 dark:text-white">Customer Account Management</h2>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">View, edit, deactivate, or reset login passwords for all registered marketplace customers.</p>
               </div>
 
               <div className="relative w-full sm:w-64">
@@ -811,16 +811,16 @@ export default function AdminDashboard() {
                   value={customerSearch}
                   onChange={(e) => setCustomerSearch(e.target.value)}
                   placeholder="Search by name or email..."
-                  className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                  className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500"
                 />
               </div>
             </div>
 
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-xs">
                   <thead>
-                    <tr className="bg-slate-950 text-slate-400 font-semibold uppercase tracking-wider border-b border-slate-800">
+                    <tr className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 font-semibold uppercase tracking-wider border-b border-slate-200 dark:border-slate-800">
                       <th className="p-4">Customer Name</th>
                       <th className="p-4">Email Address</th>
                       <th className="p-4">Phone Number</th>
@@ -829,7 +829,7 @@ export default function AdminDashboard() {
                       <th className="p-4 text-right">Actions / Password Reset</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/80">
+                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800/80">
                     {filteredCustomers.length === 0 ? (
                       <tr>
                         <td colSpan={6} className="p-8 text-center text-slate-500">
@@ -838,23 +838,23 @@ export default function AdminDashboard() {
                       </tr>
                     ) : (
                       filteredCustomers.map((cust) => (
-                        <tr key={cust.id} className="hover:bg-slate-800/40 transition">
+                        <tr key={cust.id} className="hover:bg-slate-100 dark:hover:bg-slate-800/40 transition">
                           <td className="p-4">
-                            <div className="font-bold text-white flex items-center space-x-2 text-sm">
-                              <Users className="h-4 w-4 text-blue-400" />
+                            <div className="font-bold text-slate-900 dark:text-white flex items-center space-x-2 text-sm">
+                              <Users className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                               <span>{cust.full_name}</span>
                             </div>
-                            <div className="text-[11px] text-slate-400 font-mono mt-0.5">{cust.id}</div>
+                            <div className="text-[11px] text-slate-600 dark:text-slate-400 font-mono mt-0.5">{cust.id}</div>
                           </td>
 
                           <td className="p-4">
-                            <div className="font-semibold text-blue-400 flex items-center space-x-1.5">
+                            <div className="font-semibold text-blue-600 dark:text-blue-400 flex items-center space-x-1.5">
                               <Mail className="h-3.5 w-3.5 shrink-0" />
                               <span>{cust.email || 'No email registered'}</span>
                             </div>
                           </td>
 
-                          <td className="p-4 text-slate-300">
+                          <td className="p-4 text-slate-700 dark:text-slate-300">
                             {cust.phone || 'Not provided'}
                           </td>
 
@@ -862,15 +862,15 @@ export default function AdminDashboard() {
                             <span
                               className={`text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full border ${
                                 cust.is_active
-                                  ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
-                                  : 'bg-rose-500/20 text-rose-400 border-rose-500/30'
+                                  ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
+                                  : 'bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/30'
                               }`}
                             >
                               {cust.is_active ? 'Active' : 'Disabled'}
                             </span>
                           </td>
 
-                          <td className="p-4 text-slate-400">
+                          <td className="p-4 text-slate-600 dark:text-slate-400">
                             {new Date(cust.created_at).toLocaleDateString()}
                           </td>
 
@@ -878,7 +878,7 @@ export default function AdminDashboard() {
                             <div className="flex items-center justify-end space-x-2">
                               <button
                                 onClick={() => setResetTargetUser({ id: cust.id, name: cust.full_name, email: cust.email || cust.full_name })}
-                                className="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 px-3 py-1.5 rounded-xl transition text-[11px] font-bold flex items-center space-x-1"
+                                className="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-xl transition text-[11px] font-bold flex items-center space-x-1"
                                 title="Reset Login Password"
                               >
                                 <Key className="h-3.5 w-3.5" />
@@ -887,7 +887,7 @@ export default function AdminDashboard() {
 
                               <button
                                 onClick={() => setEditingCustomer(cust)}
-                                className="p-1.5 text-slate-400 hover:text-blue-400 transition"
+                                className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
                                 title="Edit Customer Details"
                               >
                                 <Edit3 className="h-4 w-4" />
@@ -895,7 +895,7 @@ export default function AdminDashboard() {
 
                               <button
                                 onClick={() => handleDeleteCustomer(cust.id, cust.full_name)}
-                                className="p-1.5 text-slate-400 hover:text-rose-400 transition"
+                                className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 transition"
                                 title="Delete Customer"
                               >
                                 <Trash2 className="h-4 w-4" />
@@ -915,21 +915,21 @@ export default function AdminDashboard() {
         {/* Tab 1: Financial Ledger & Settings */}
         {activeTab === 'financial' && (
           <div className="space-y-8">
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-2xl">
+              <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
                 <div>
-                  <h2 className="text-lg font-bold text-white flex items-center space-x-2">
-                    <Settings className="h-5 w-5 text-blue-400" />
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                    <Settings className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     <span>Currency Format & Quickfix Commission Manager</span>
                   </h2>
-                  <p className="text-xs text-slate-400 mt-1">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
                     Configure the platform currency symbol and set how much service partners pay Quickfix per completed service.
                   </p>
                 </div>
               </div>
 
               {settingsMsg && (
-                <div className="mb-6 p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-xs text-emerald-400 flex items-center space-x-2">
+                <div className="mb-6 p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-xs text-emerald-600 dark:text-emerald-400 flex items-center space-x-2">
                   <CheckCircle2 className="h-4 w-4 shrink-0" />
                   <span>{settingsMsg}</span>
                 </div>
@@ -937,7 +937,7 @@ export default function AdminDashboard() {
 
               <form onSubmit={handleSaveSettings} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Currency Format / Symbol</label>
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Currency Format / Symbol</label>
                   <select
                     value={currencySymbol}
                     onChange={(e) => {
@@ -949,7 +949,7 @@ export default function AdminDashboard() {
                       else if (sym === '£') setCurrencyCode('GBP');
                       else if (sym === '₹') setCurrencyCode('INR');
                     }}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   >
                     <option value="Rs.">Rs. (Sri Lankan / South Asian Rupee)</option>
                     <option value="$">$ (US Dollar)</option>
@@ -961,22 +961,22 @@ export default function AdminDashboard() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Currency ISO Code</label>
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Currency ISO Code</label>
                   <input
                     type="text"
                     value={currencyCode}
                     onChange={(e) => setCurrencyCode(e.target.value.toUpperCase())}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500 font-mono"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 font-mono"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Quickfix Commission Model</label>
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Quickfix Commission Model</label>
                   <select
                     value={commissionType}
                     onChange={(e) => setCommissionType(e.target.value as any)}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   >
                     <option value="percentage">Percentage Rate (%)</option>
                     <option value="flat">Flat Fixed Amount ({currencySymbol})</option>
@@ -984,7 +984,7 @@ export default function AdminDashboard() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                     {commissionType === 'percentage' ? 'Commission Rate (%)' : `Flat Fee Amount (${currencySymbol})`}
                   </label>
                   <input
@@ -993,24 +993,24 @@ export default function AdminDashboard() {
                     min="0"
                     value={commissionValue}
                     onChange={(e) => setCommissionValue(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500 font-bold"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 font-bold"
                     required
                   />
                 </div>
 
-                <div className="md:col-span-2 lg:col-span-3 bg-slate-950 border border-slate-800 p-4 rounded-2xl flex items-center space-x-3">
-                  <Calculator className="h-6 w-6 text-blue-400 shrink-0" />
+                <div className="md:col-span-2 lg:col-span-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-4 rounded-2xl flex items-center space-x-3">
+                  <Calculator className="h-6 w-6 text-blue-600 dark:text-blue-400 shrink-0" />
                   <div className="text-xs">
-                    <span className="font-bold text-white block">Example Fee Calculation:</span>
-                    <span className="text-slate-400">
-                      If a service partner completes a service for <strong className="text-white">{formatCurrency(100, currencySymbol, currencyCode)}</strong>:
+                    <span className="font-bold text-slate-900 dark:text-white block">Example Fee Calculation:</span>
+                    <span className="text-slate-600 dark:text-slate-400">
+                      If a service partner completes a service for <strong className="text-slate-900 dark:text-white">{formatCurrency(100, currencySymbol, currencyCode)}</strong>:
                     </span>
                     <div className="flex items-center space-x-4 mt-1">
-                      <span className="text-blue-400 font-bold">
+                      <span className="text-blue-600 dark:text-blue-400 font-bold">
                         Owed to Quickfix: {formatCurrency(computeCommissionFee(100), currencySymbol, currencyCode)}
                         {commissionType === 'percentage' && ` (${commissionValue}%)`}
                       </span>
-                      <span className="text-emerald-400 font-bold">
+                      <span className="text-emerald-600 dark:text-emerald-400 font-bold">
                         Partner Retains: {formatCurrency(100 - computeCommissionFee(100), currencySymbol, currencyCode)}
                       </span>
                     </div>
@@ -1030,61 +1030,61 @@ export default function AdminDashboard() {
 
             {/* Financial Overview Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
-                <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl">
+                <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-medium">
                   <span>Gross Marketplace Volume (GMV)</span>
-                  <DollarSign className="h-4 w-4 text-emerald-400" />
+                  <DollarSign className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <div className="text-2xl font-extrabold text-white mt-2">
+                <div className="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">
                   {formatCurrency(totalGMV, currencySymbol, currencyCode)}
                 </div>
-                <span className="text-[10px] text-emerald-400 mt-1 block">From completed customer bookings</span>
+                <span className="text-[10px] text-emerald-600 dark:text-emerald-400 mt-1 block">From completed customer bookings</span>
               </div>
 
-              <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl bg-gradient-to-br from-blue-950/40 to-slate-900">
-                <div className="flex items-center justify-between text-xs text-blue-300 font-medium">
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-white dark:from-blue-950/40 dark:to-slate-900">
+                <div className="flex items-center justify-between text-xs text-blue-700 dark:text-blue-300 font-medium">
                   <span>Quickfix Platform Commission</span>
-                  <ArrowUpRight className="h-4 w-4 text-blue-400" />
+                  <ArrowUpRight className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                 </div>
-                <div className="text-2xl font-extrabold text-blue-400 mt-2">
+                <div className="text-2xl font-extrabold text-blue-600 dark:text-blue-400 mt-2">
                   {formatCurrency(totalQuickfixFees, currencySymbol, currencyCode)}
                 </div>
-                <span className="text-[10px] text-slate-400 mt-1 block">
+                <span className="text-[10px] text-slate-600 dark:text-slate-400 mt-1 block">
                   {commissionType === 'percentage' ? `${commissionValue}% rate` : `${formatCurrency(commissionValue, currencySymbol, currencyCode)} flat fee`}
                 </span>
               </div>
 
-              <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
-                <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl">
+                <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-medium">
                   <span>Partner Net Payouts</span>
-                  <Building2 className="h-4 w-4 text-indigo-400" />
+                  <Building2 className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
                 </div>
-                <div className="text-2xl font-extrabold text-white mt-2">
+                <div className="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">
                   {formatCurrency(totalPartnerPayouts, currencySymbol, currencyCode)}
                 </div>
-                <span className="text-[10px] text-slate-400 mt-1 block">Earned by service providers</span>
+                <span className="text-[10px] text-slate-600 dark:text-slate-400 mt-1 block">Earned by service providers</span>
               </div>
 
-              <div className="bg-slate-900 border border-slate-800 p-5 rounded-2xl">
-                <div className="flex items-center justify-between text-xs text-slate-400 font-medium">
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl">
+                <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-medium">
                   <span>Total Event Bookings</span>
-                  <Calendar className="h-4 w-4 text-amber-400" />
+                  <Calendar className="h-4 w-4 text-amber-600 dark:text-amber-400" />
                 </div>
-                <div className="text-2xl font-extrabold text-white mt-2">
+                <div className="text-2xl font-extrabold text-slate-900 dark:text-white mt-2">
                   {allBookings.length}
                 </div>
-                <span className="text-[10px] text-slate-400 mt-1 block">Completed: {completedBookings.length}</span>
+                <span className="text-[10px] text-slate-600 dark:text-slate-400 mt-1 block">Completed: {completedBookings.length}</span>
               </div>
             </div>
 
             {/* Financial Ledger Event Table */}
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
-              <div className="p-5 border-b border-slate-800 flex items-center justify-between">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                 <div>
-                  <h2 className="text-lg font-bold text-white">Event Ledger & Partner Commission Breakdowns</h2>
-                  <p className="text-xs text-slate-400 mt-0.5">Real-time breakdown of service partner fees, customer payments, and Quickfix commissions.</p>
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-white">Event Ledger & Partner Commission Breakdowns</h2>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Real-time breakdown of service partner fees, customer payments, and Quickfix commissions.</p>
                 </div>
-                <span className="text-xs bg-blue-500/20 text-blue-400 font-bold px-3 py-1 rounded-full border border-blue-500/30">
+                <span className="text-xs bg-blue-500/20 text-blue-600 dark:text-blue-400 font-bold px-3 py-1 rounded-full border border-blue-500/30">
                   {commissionType === 'percentage' ? `${commissionValue}% Commission` : `${formatCurrency(commissionValue, currencySymbol, currencyCode)} Flat Fee`}
                 </span>
               </div>
@@ -1092,17 +1092,17 @@ export default function AdminDashboard() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="bg-slate-950 text-slate-400 text-xs font-semibold uppercase tracking-wider border-b border-slate-800">
+                    <tr className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider border-b border-slate-200 dark:border-slate-800">
                       <th className="p-4">Customer & Email</th>
                       <th className="p-4">Service Partner & Email</th>
                       <th className="p-4">Service & Date</th>
                       <th className="p-4">Total Payment</th>
-                      <th className="p-4 text-blue-400">Owed to Quickfix</th>
-                      <th className="p-4 text-emerald-400">Partner Net</th>
+                      <th className="p-4 text-blue-600 dark:text-blue-400">Owed to Quickfix</th>
+                      <th className="p-4 text-emerald-600 dark:text-emerald-400">Partner Net</th>
                       <th className="p-4">Status</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/80 text-xs">
+                  <tbody className="divide-y divide-slate-200 dark:divide-slate-800/80 text-xs">
                     {allBookings.length === 0 ? (
                       <tr>
                         <td colSpan={7} className="p-8 text-center text-slate-500">
@@ -1116,31 +1116,31 @@ export default function AdminDashboard() {
                         const partnerNet = price - quickfixFee;
 
                         return (
-                          <tr key={b.id} className="hover:bg-slate-800/40 transition">
+                          <tr key={b.id} className="hover:bg-slate-100 dark:hover:bg-slate-800/40 transition">
                             <td className="p-4">
-                              <div className="font-bold text-white">{b.profiles?.full_name || 'Customer'}</div>
-                              <div className="text-[11px] text-blue-400">{b.profiles?.email || 'No email'}</div>
+                              <div className="font-bold text-slate-900 dark:text-white">{b.profiles?.full_name || 'Customer'}</div>
+                              <div className="text-[11px] text-blue-600 dark:text-blue-400">{b.profiles?.email || 'No email'}</div>
                             </td>
 
                             <td className="p-4">
-                              <div className="font-bold text-slate-200">{b.businesses?.name || 'Unassigned Partner'}</div>
-                              <div className="text-[11px] text-blue-400">{b.businesses?.email || 'No email'}</div>
+                              <div className="font-bold text-slate-800 dark:text-slate-200">{b.businesses?.name || 'Unassigned Partner'}</div>
+                              <div className="text-[11px] text-blue-600 dark:text-blue-400">{b.businesses?.email || 'No email'}</div>
                             </td>
 
                             <td className="p-4">
-                              <div className="font-medium text-slate-300">{b.services?.name || 'Service'}</div>
+                              <div className="font-medium text-slate-700 dark:text-slate-300">{b.services?.name || 'Service'}</div>
                               <div className="text-[11px] text-slate-500">{b.booking_date} ({b.start_time?.substring(0, 5)})</div>
                             </td>
 
-                            <td className="p-4 font-bold text-white">
+                            <td className="p-4 font-bold text-slate-900 dark:text-white">
                               {formatCurrency(price, currencySymbol, currencyCode)}
                             </td>
 
-                            <td className="p-4 font-bold text-blue-400 bg-blue-500/5">
+                            <td className="p-4 font-bold text-blue-600 dark:text-blue-400 bg-blue-500/5">
                               {formatCurrency(quickfixFee, currencySymbol, currencyCode)}
                             </td>
 
-                            <td className="p-4 font-bold text-emerald-400 bg-emerald-500/5">
+                            <td className="p-4 font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/5">
                               {formatCurrency(partnerNet, currencySymbol, currencyCode)}
                             </td>
 
@@ -1148,10 +1148,10 @@ export default function AdminDashboard() {
                               <span
                                 className={`text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border ${
                                   b.status === 'completed'
-                                    ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                                    ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
                                     : b.status === 'cancelled' || b.status === 'rejected'
-                                    ? 'bg-rose-500/20 text-rose-400 border-rose-500/30'
-                                    : 'bg-amber-500/20 text-amber-400 border-amber-500/30'
+                                    ? 'bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/30'
+                                    : 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30'
                                 }`}
                               >
                                 {b.status}
@@ -1172,20 +1172,20 @@ export default function AdminDashboard() {
         {activeTab === 'verifications' && (
           <div className="space-y-4">
             {verifications.length === 0 ? (
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center text-xs text-slate-400">
+              <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 text-center text-xs text-slate-600 dark:text-slate-400">
                 No verification requests submitted.
               </div>
             ) : (
               verifications.map((req) => (
-                <div key={req.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div key={req.id} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                   <div>
-                    <h3 className="text-base font-bold text-white">{req.businesses?.name}</h3>
-                    <p className="text-xs text-slate-400">City: {req.businesses?.city}</p>
-                    <p className="text-xs text-blue-400 mt-1 truncate">Document: {req.document_url}</p>
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white">{req.businesses?.name}</h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400">City: {req.businesses?.city}</p>
+                    <p className="text-xs text-blue-600 dark:text-blue-400 mt-1 truncate">Document: {req.document_url}</p>
                   </div>
 
                   <div className="flex items-center space-x-3">
-                    <span className="text-xs font-bold uppercase text-amber-400">{req.status}</span>
+                    <span className="text-xs font-bold uppercase text-amber-600 dark:text-amber-400">{req.status}</span>
                     {req.status === 'pending' && (
                       <>
                         <button
@@ -1196,7 +1196,7 @@ export default function AdminDashboard() {
                         </button>
                         <button
                           onClick={() => handleApproveVerification(req, 'rejected')}
-                          className="bg-rose-600/20 hover:bg-rose-600/30 text-rose-400 border border-rose-500/30 text-xs font-bold px-4 py-2 rounded-xl transition"
+                          className="bg-rose-600/20 hover:bg-rose-600/30 text-rose-600 dark:text-rose-400 border border-rose-500/30 text-xs font-bold px-4 py-2 rounded-xl transition"
                         >
                           Reject
                         </button>
@@ -1213,35 +1213,35 @@ export default function AdminDashboard() {
         {activeTab === 'categories' && (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-4">
-              <h2 className="text-lg font-bold text-white mb-2">Marketplace Categories</h2>
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Marketplace Categories</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {categories.map((cat) => (
-                  <div key={cat.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                  <div key={cat.id} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-3">
                     <div>
                       <div className="flex items-center justify-between">
-                        <h3 className="text-sm font-bold text-white flex items-center space-x-2">
-                          <Tag className="h-4 w-4 text-blue-400" />
+                        <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                          <Tag className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                           <span>{cat.name}</span>
                         </h3>
-                        <span className="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md font-mono">
+                        <span className="text-[10px] bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded-md font-mono">
                           Icon: {cat.icon || 'Wrench'}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-400 mt-1.5">Slug: {cat.slug}</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1.5">Slug: {cat.slug}</p>
                       {cat.description && <p className="text-xs text-slate-500 mt-1 italic">{cat.description}</p>}
                     </div>
 
-                    <div className="flex items-center justify-end space-x-2 border-t border-slate-800/80 pt-2">
+                    <div className="flex items-center justify-end space-x-2 border-t border-slate-200 dark:border-slate-800/80 pt-2">
                       <button
                         onClick={() => setEditingCategory(cat)}
-                        className="p-1.5 text-slate-400 hover:text-blue-400 transition"
+                        className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
                         title="Edit Category"
                       >
                         <Edit3 className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => handleDeleteCategory(cat.id, cat.name)}
-                        className="p-1.5 text-slate-400 hover:text-rose-400 transition"
+                        className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 transition"
                         title="Delete Category"
                       >
                         <Trash2 className="h-4 w-4" />
@@ -1252,54 +1252,54 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            <form onSubmit={handleCreateCategory} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 h-fit">
-              <h3 className="text-base font-bold text-white flex items-center space-x-2">
-                <Plus className="h-4 w-4 text-blue-400" />
+            <form onSubmit={handleCreateCategory} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-4 h-fit">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                <Plus className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                 <span>Create New Category</span>
               </h3>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Category Name</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Category Name</label>
                 <input
                   type="text"
                   value={newCatName}
                   onChange={(e) => setNewCatName(e.target.value)}
                   placeholder="e.g. Roofing & Gutters"
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Slug (Optional)</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Slug (Optional)</label>
                 <input
                   type="text"
                   value={newCatSlug}
                   onChange={(e) => setNewCatSlug(e.target.value)}
                   placeholder="roofing-gutters"
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Lucide Icon Name</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Lucide Icon Name</label>
                 <input
                   type="text"
                   value={newCatIcon}
                   onChange={(e) => setNewCatIcon(e.target.value)}
                   placeholder="Wrench, Zap, Wind, Sparkles..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Description</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Description</label>
                 <textarea
                   rows={2}
                   value={newCatDesc}
                   onChange={(e) => setNewCatDesc(e.target.value)}
                   placeholder="Short description of this service category..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                 />
               </div>
 
@@ -1317,15 +1317,15 @@ export default function AdminDashboard() {
         {activeTab === 'cities' && (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-4">
-              <h2 className="text-lg font-bold text-white mb-2">Supported Cities Dropdown List</h2>
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Supported Cities Dropdown List</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {cities.map((city) => (
-                  <div key={city.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex items-center justify-between">
+                  <div key={city.id} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 flex items-center justify-between">
                     <div>
                       <div className="flex items-center space-x-2">
-                        <MapPin className="h-4 w-4 text-emerald-400" />
-                        <span className="text-sm font-bold text-white">{city.name}</span>
-                        <span className="text-[10px] text-slate-400 font-mono">({city.state_or_country})</span>
+                        <MapPin className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                        <span className="text-sm font-bold text-slate-900 dark:text-white">{city.name}</span>
+                        <span className="text-[10px] text-slate-600 dark:text-slate-400 font-mono">({city.state_or_country})</span>
                       </div>
                       <span className="text-[10px] text-slate-500 mt-1 block">
                         Status: {city.is_active ? 'Active' : 'Disabled'}
@@ -1335,14 +1335,14 @@ export default function AdminDashboard() {
                     <div className="flex items-center space-x-2">
                       <button
                         onClick={() => setEditingCity(city)}
-                        className="p-1.5 text-slate-400 hover:text-blue-400 transition"
+                        className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
                         title="Edit City"
                       >
                         <Edit3 className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => handleDeleteCity(city.id, city.name)}
-                        className="p-1.5 text-slate-400 hover:text-rose-400 transition"
+                        className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 transition"
                         title="Delete City"
                       >
                         <Trash2 className="h-4 w-4" />
@@ -1353,32 +1353,32 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            <form onSubmit={handleCreateCity} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 h-fit">
-              <h3 className="text-base font-bold text-white flex items-center space-x-2">
-                <Plus className="h-4 w-4 text-emerald-400" />
+            <form onSubmit={handleCreateCity} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-4 h-fit">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                <Plus className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Add Supported City</span>
               </h3>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">City Name</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">City Name</label>
                 <input
                   type="text"
                   value={newCityName}
                   onChange={(e) => setNewCityName(e.target.value)}
                   placeholder="e.g. Springfield, Chicago"
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">State / Country Code</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">State / Country Code</label>
                 <input
                   type="text"
                   value={newCityState}
                   onChange={(e) => setNewCityState(e.target.value)}
                   placeholder="US, CA, UK..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   required
                 />
               </div>
@@ -1396,23 +1396,23 @@ export default function AdminDashboard() {
         {/* Modal: Admin Cancel Booking */}
         {adminCancelBookingId && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-            <form onSubmit={handleAdminCancelBooking} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-2xl">
-              <h3 className="text-lg font-bold text-white flex items-center space-x-2">
-                <AlertTriangle className="h-5 w-5 text-rose-400" />
+            <form onSubmit={handleAdminCancelBooking} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-2xl">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                <AlertTriangle className="h-5 w-5 text-rose-600 dark:text-rose-400" />
                 <span>Confirm Admin Booking Cancellation</span>
               </h3>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-slate-700 dark:text-slate-300">
                 Are you sure you want to cancel this booking? The customer and provider will be notified.
               </p>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">Cancellation Reason</label>
+                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Cancellation Reason</label>
                 <textarea
                   rows={3}
                   value={adminCancelReason}
                   onChange={(e) => setAdminCancelReason(e.target.value)}
                   placeholder="Provide reason for cancelling..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-rose-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-rose-500"
                 />
               </div>
 
@@ -1423,7 +1423,7 @@ export default function AdminDashboard() {
                     setAdminCancelBookingId(null);
                     setAdminCancelReason('Cancelled by Platform Administrator');
                   }}
-                  className="px-4 py-2 text-xs text-slate-400 hover:text-white"
+                  className="px-4 py-2 text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 >
                   Close
                 </button>
@@ -1442,33 +1442,33 @@ export default function AdminDashboard() {
         {/* Modal: Admin Password Reset */}
         {resetTargetUser && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-            <form onSubmit={handleResetPasswordSubmit} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-2xl">
-              <h3 className="text-lg font-bold text-white flex items-center space-x-2">
-                <Key className="h-5 w-5 text-blue-400" />
+            <form onSubmit={handleResetPasswordSubmit} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4 shadow-2xl">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                <Key className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 <span>Reset User Login Password</span>
               </h3>
-              <p className="text-xs text-slate-300">
-                Target User: <strong className="text-white">{resetTargetUser.name}</strong> ({resetTargetUser.email})
+              <p className="text-xs text-slate-700 dark:text-slate-300">
+                Target User: <strong className="text-slate-900 dark:text-white">{resetTargetUser.name}</strong> ({resetTargetUser.email})
               </p>
 
               {resetMsg && (
                 <div className={`p-3 rounded-xl text-xs flex items-center space-x-2 ${
                   resetMsg.startsWith('Error')
-                    ? 'bg-rose-500/10 border border-rose-500/20 text-rose-400'
-                    : 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
+                    ? 'bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400'
+                    : 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400'
                 }`}>
                   <span>{resetMsg}</span>
                 </div>
               )}
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">New Login Password</label>
+                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">New Login Password</label>
                 <input
                   type="password"
                   value={newPasswordValue}
                   onChange={(e) => setNewPasswordValue(e.target.value)}
                   placeholder="Enter new password (min 6 chars)..."
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   required
                   minLength={6}
                 />
@@ -1482,7 +1482,7 @@ export default function AdminDashboard() {
                     setNewPasswordValue('');
                     setResetMsg(null);
                   }}
-                  className="px-4 py-2 text-xs text-slate-400 hover:text-white"
+                  className="px-4 py-2 text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 >
                   Cancel
                 </button>
@@ -1501,37 +1501,37 @@ export default function AdminDashboard() {
         {/* Modal: Edit Customer */}
         {editingCustomer && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-            <form onSubmit={handleUpdateCustomer} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
-              <h3 className="text-lg font-bold text-white">Edit Customer Profile</h3>
+            <form onSubmit={handleUpdateCustomer} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Edit Customer Profile</h3>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Full Name</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Full Name</label>
                 <input
                   type="text"
                   value={editingCustomer.full_name}
                   onChange={(e) => setEditingCustomer({ ...editingCustomer, full_name: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Email Address</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
                 <input
                   type="email"
                   value={editingCustomer.email || ''}
                   onChange={(e) => setEditingCustomer({ ...editingCustomer, email: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Phone Number</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Phone Number</label>
                 <input
                   type="text"
                   value={editingCustomer.phone || ''}
                   onChange={(e) => setEditingCustomer({ ...editingCustomer, phone: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                 />
               </div>
 
@@ -1541,9 +1541,9 @@ export default function AdminDashboard() {
                   id="cust_active_check"
                   checked={editingCustomer.is_active}
                   onChange={(e) => setEditingCustomer({ ...editingCustomer, is_active: e.target.checked })}
-                  className="rounded bg-slate-950 border-slate-800 text-blue-600 focus:ring-0"
+                  className="rounded bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-blue-600 focus:ring-0"
                 />
-                <label htmlFor="cust_active_check" className="text-xs text-slate-300">
+                <label htmlFor="cust_active_check" className="text-xs text-slate-700 dark:text-slate-300">
                   Account Active Status
                 </label>
               </div>
@@ -1552,7 +1552,7 @@ export default function AdminDashboard() {
                 <button
                   type="button"
                   onClick={() => setEditingCustomer(null)}
-                  className="px-4 py-2 text-xs text-slate-400 hover:text-white"
+                  className="px-4 py-2 text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 >
                   Cancel
                 </button>
@@ -1570,48 +1570,48 @@ export default function AdminDashboard() {
         {/* Modal: Edit Service Provider */}
         {editingProvider && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-            <form onSubmit={handleUpdateProvider} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
-              <h3 className="text-lg font-bold text-white">Edit Service Provider</h3>
+            <form onSubmit={handleUpdateProvider} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Edit Service Provider</h3>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Business Name</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Business Name</label>
                 <input
                   type="text"
                   value={editingProvider.name}
                   onChange={(e) => setEditingProvider({ ...editingProvider, name: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">Business Email Address</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Business Email Address</label>
                 <input
                   type="email"
                   value={editingProvider.email || ''}
                   onChange={(e) => setEditingProvider({ ...editingProvider, email: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-slate-300 mb-1">City</label>
+                <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">City</label>
                 <input
                   type="text"
                   value={editingProvider.city}
                   onChange={(e) => setEditingProvider({ ...editingProvider, city: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   required
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs text-slate-300 mb-1">Verification Status</label>
+                  <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Verification Status</label>
                   <select
                     value={editingProvider.verification_status}
                     onChange={(e) => setEditingProvider({ ...editingProvider, verification_status: e.target.value })}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   >
                     <option value="pending">Pending</option>
                     <option value="approved">Approved</option>
@@ -1620,11 +1620,11 @@ export default function AdminDashboard() {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-slate-300 mb-1">Subscription Tier</label>
+                  <label className="block text-xs text-slate-700 dark:text-slate-300 mb-1">Subscription Tier</label>
                   <select
                     value={editingProvider.subscription_status}
                     onChange={(e) => setEditingProvider({ ...editingProvider, subscription_status: e.target.value })}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"
                   >
                     <option value="free">Free Tier</option>
                     <option value="active">Pro / Active</option>
@@ -1640,9 +1640,9 @@ export default function AdminDashboard() {
                   id="prov_active_check"
                   checked={editingProvider.is_active}
                   onChange={(e) => setEditingProvider({ ...editingProvider, is_active: e.target.checked })}
-                  className="rounded bg-slate-950 border-slate-800 text-blue-600 focus:ring-0"
+                  className="rounded bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-blue-600 focus:ring-0"
                 />
-                <label htmlFor="prov_active_check" className="text-xs text-slate-300">
+                <label htmlFor="prov_active_check" className="text-xs text-slate-700 dark:text-slate-300">
                   Business Active Status
                 </label>
               </div>
@@ -1651,7 +1651,7 @@ export default function AdminDashboard() {
                 <button
                   type="button"
                   onClick={() => setEditingProvider(null)}
-                  className="px-4 py-2 text-xs text-slate-400 hover:text-white"
+                  className="px-4 py-2 text-xs text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 >
                   Cancel
                 </button>
